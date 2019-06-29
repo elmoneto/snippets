@@ -1,0 +1,45 @@
+[out:json][timeout:25];
+{{geocodeArea:Sede São Gabriel}}-> .searchArea;
+(
+way["highway"]["surface"~"asphalt|sett|cobblestone:flattened|paving_stones|compacted|dirt|paved|unpaved"](area.searchArea);
+);
+
+out body;
+>;
+out skel qt;
+
+{{style:
+way[surface=asphalt]{
+    color:black;
+}
+
+way[surface=sett]{
+    color:yellow;
+}
+
+way[surface=cobblestone:flattened]{
+    color:green;
+}
+
+way[surface=paving_stones]{
+    color:red;
+}
+
+way[surface=compacted]{
+    color:brown;
+}
+
+
+way[surface=dirt]{
+    color:blue;
+}
+
+way[surface=paved]{
+    color:orange;
+}
+
+way[surface=unpaved]{
+    color:gray;
+}
+
+}}
